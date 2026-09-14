@@ -1,39 +1,62 @@
 # Contributing
 
-Thanks for helping keep Awesome GEO useful and neutral.
+Help readers find evidence they can inspect and tools that solve a distinct problem.
+
+## What earns a place
+
+A working homepage and a neutral sentence are necessary, but not sufficient. Explain the gap in this list and provide something a reviewer can inspect: source code, a documented method, a public sample report, a usable diagnostic, or an original dataset with provenance.
+
+- Prefer primary research, provider documentation, reproducible tools, and useful public data.
+- New commercial tools must add a distinct use case or inspectable evidence beyond the monitoring features already represented here.
+- Free tools must identify what is free, whether an account is required, and whether paid APIs or services are needed.
+- Open-source claims must match the linked code and license. Do not describe a paid feature as part of the free project.
+- Research must state its source, date, sample, method, and material limitations. Separate measured results from hypotheses and causal claims.
+- Readiness scores, crawler probes, and sampled AI answers must not be presented as interchangeable measures of visibility.
+
+## Affiliation and promotion
+
+Disclose if you own, work for, contribute to, or are paid by the resource. Self-submission is allowed, but affiliation does not earn a listing. Competitor status is not a reason for rejection either; reader value and evidence decide.
+
+We do not accept paid placements, reciprocal-link arrangements, affiliate links, promotional listicles, guaranteed ranking claims, or services built around undisclosed promotional posting. A new tool with the same generic feature list as existing entries may be declined even if it is legitimate.
+
+Trakkr maintains this repository and is listed first in commercial tools. Its research is labeled as maintainer-published work. The same evidence standards apply to Trakkr resources.
 
 ## Adding an entry
 
-- Add one link per pull request unless the links are tightly related.
-- Link to the original resource, product page, paper abstract, dataset, or project homepage.
-- Use the resource name as the link text.
-- Keep the description to one factual sentence.
-- Do not use superlatives, category-leader claims, or similar marketing language.
-- Sort entries alphabetically inside each section unless the section states a different order.
-- Prefer resources that are current, public, maintained, and directly related to GEO, AEO, AI search visibility, citations, llms.txt, structured data, or retrieval-grounded answers.
-- For research papers, link to the arXiv abstract page when one exists.
-- For commercial tools, link to the actual product page, not a press release, affiliate page, or comparison listicle.
+1. Add one resource per pull request unless the links are tightly related.
+2. Explain the reader problem it solves and which existing entries you compared it with.
+3. Link to the original product, source repository, paper abstract, dataset, or documentation. Avoid referral and tracking parameters.
+4. Use the resource name as the link text and one short, factual sentence as its description. Omit superlatives and unsupported outcome claims.
+5. Use the most specific section and sort alphabetically unless the section states a different order.
+6. Regenerate the machine-readable index from the README:
 
-## Removing or changing an entry
+   ```sh
+   python3 scripts/export_resources.py
+   ```
 
-- Remove links that are dead, misleading, spammy, abandoned, or no longer related to GEO.
-- Update descriptions when a product or resource changes scope.
-- Keep competitor descriptions neutral and comparable in shape.
+7. Include both `README.md` and `resources.json` in your change. CI checks that they agree.
 
-## Editorial standards
+The Start here section is an editorial reading path. Suggest changes when they improve that path, rather than adding another product placement.
 
-- This is not a vendor directory and not an advertising surface.
-- Do not add referral links, tracking parameters, scraped private data, leaked documents, or sources that were not intended to be public.
-- If you find a sensitive source, do not link it; explain the concern in the pull request without reposting the sensitive material.
-- Avoid duplicate resources unless each link has distinct value.
+## Corrections and removals
 
-## Pull request checklist
+Flag broken, parked, misleading, abandoned, or out-of-scope resources. Provide the affected URL and evidence for the correction. Temporary timeouts and bot-blocking responses are not proof that a resource is dead.
 
-- The link resolves.
-- The entry is in the most specific section.
-- The entry is alphabetized where applicable.
-- The description is one sentence, factual, and neutral.
-- The resource is public and safe to link.
+Do not link private data, leaked documents, or sources that were not intended to be public. Explain a concern without reposting sensitive material.
+
+## Review and maintenance
+
+Submissions are reviewed in batches. Inclusion is editorial, not automatic; a declined submission can be reconsidered when its evidence or usefulness changes.
+
+The weekly link check retries transient failures and maintains one open report. It closes that report after a successful check. Bot-blocking responses such as HTTP 403 or 429 are tolerated by automation and still require human judgment; a green check is not an endorsement or proof of content quality.
+
+Before submitting, run:
+
+```sh
+python3 scripts/export_resources.py
+node --test scripts/sync-link-issue.test.cjs
+git diff --check
+```
 
 ## License
 

@@ -1,0 +1,26 @@
+name: Validate resources
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check machine-readable index
+        run: |
+          python3 scripts/export_resources.py
+          git diff --exit-code -- resources.json
+      - name: Test maintenance issue handling
+        run: node --test scripts/sync-link-issue.test.cjs
+      - name: Check whitespace
+        run: git diff --check

@@ -1,16 +1,40 @@
-# Awesome GEO [![Awesome](https://awesome.re/badge.svg)](https://awesome.re) ![Top 5 brands today](assets/top-brands.svg)
+# Awesome GEO [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
 > A curated list of Generative Engine Optimization resources for AI search, answer engines, citations, and brand visibility.
 
-Generative Engine Optimization (GEO) is still an early field, so this list prioritizes live resources, neutral descriptions, and sources that can be checked by contributors.
+A starting point for measuring AI visibility, checking crawler access, and evaluating claims about what earns citations. Start with the reading path below, then use the full index for deeper work.
 
 Maintained by Trakkr, an AI visibility platform. Trakkr is listed first in commercial tools because it maintains this repository; remaining commercial entries are alphabetical.
 
-Machine-readable index: [`resources.json`](resources.json).
+Machine-readable index: [`resources.json`](resources.json). Selection criteria: [Contributing](CONTRIBUTING.md). Listing a resource is not an endorsement of its marketing claims.
+
+## Start here
+
+Read these in order if you are new to GEO.
+
+1. **Understand the search surface.** [Google's AI search guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) explains eligibility and content practices for Google's AI features. Do not assume every provider works the same way.
+2. **Measure variation before claiming a win.** [Don't Measure Once](https://arxiv.org/abs/2604.07585) studies repeated AI visibility measurements. Keep the prompts, engine, locale, dates, and number of runs alongside any reported score.
+3. **Inspect the sources behind an answer.** [Trakkr's citation source index](https://trakkr.ai/trakkr-research/citation-sources) provides a public domain explorer. It describes a monitored panel, not the whole web or each provider separately.
+4. **Check access separately from visibility.** [Mydentify's crawler checker](https://mydentify.com/tools/ai-crawler-access-checker) distinguishes search, user retrieval, and training bots. User-agent probes cannot reproduce requests from verified provider IPs.
+5. **Test a proposed fix before rolling it out.** [Trakkr's llms.txt study](https://trakkr.ai/trakkr-research/llmstxt-effect) explains why an observational association does not establish the effect of adding a file.
+
+## Measure the right outcome
+
+| Question | Evidence to keep | What it does not establish |
+| --- | --- | --- |
+| Can a crawler retrieve the page? | HTTP response, robots rules, page directives, and relevant server logs | That the page was indexed or cited |
+| Does the answer mention the brand? | Full answers, prompt set, engine, locale, run dates, and repeated samples | That the answer links to your site or sends traffic |
+| Does the answer cite the page? | Source URLs and citation counts over the same prompt set | That a page change caused those citations |
+| Does this help the business? | Referral visits, signups, and conversions with attribution limits | That all AI-assisted discovery is visible in analytics |
+
+Read proprietary readiness scores as tool-specific checks. They are not observed citation rates or comparable rankings across vendors. Treat before-and-after changes as tentative when prompts, models, or sampling also changed.
 
 ## Contents
 
+- [Start here](#start-here)
+- [Measure the right outcome](#measure-the-right-outcome)
 - [What is GEO](#what-is-geo)
+- [Trakkr Research and Data](#trakkr-research-and-data)
 - [Tools (Commercial)](#tools-commercial)
 - [Tools (Open Source and Free)](#tools-open-source-and-free)
 - [Free Checkers](#free-checkers)
@@ -29,7 +53,22 @@ Machine-readable index: [`resources.json`](resources.json).
 
 Generative Engine Optimization (GEO), sometimes called Answer Engine Optimization (AEO), is the practice of improving whether a brand, source, product, or entity is mentioned, cited, and accurately represented by AI answer systems such as ChatGPT, Perplexity, Gemini, Claude, Copilot, and Google AI Overviews. It overlaps with SEO, but shifts measurement from ranked pages to cited sources, answer inclusion, entity understanding, and share of voice inside generated responses. For a longer overview, read [Generative engine optimization](https://en.wikipedia.org/wiki/Generative_engine_optimization).
 
+## Trakkr Research and Data
+
+These resources are published by this repository's maintainer. Each addresses a different measurement question; read the method, observation window, and limits before using a finding. The broader index below includes independent research and competing tools.
+
+- [Citation Source Index](https://trakkr.ai/trakkr-research/citation-sources) - Public domain explorer with panel, attribution, and classification limits; useful for inspecting cited sources.
+- [Do AI Crawlers Prefer Markdown?](https://trakkr.ai/trakkr-research/markdown-crawler-experiment) - Randomized format experiment measuring crawler coverage, which is a different outcome from citations or sales.
+- [How AI Translates Your Questions](https://trakkr.ai/trakkr-research/query-translation) - Aggregate study of prompt-to-search rewrites; useful for understanding retrieval queries, with individual rows withheld.
+- [The Half-Life of AI Citations](https://trakkr.ai/trakkr-research/citation-decay) - Citation persistence study with observation-window and peak-selection caveats; useful for planning repeated measurement.
+- [The llms.txt Effect](https://trakkr.ai/trakkr-research/llmstxt-effect) - Observational adoption and citation study separating full-sample and subset results; neither establishes a causal effect.
+- [Trakkr Data](https://trakkr.ai/data) - Public AI visibility benchmarks and rankings with links to underlying datasets and methods.
+
+For downloadable brand rankings, see [AI 500](https://github.com/trakkr-aisearch/ai-500). Browse the [research library](https://trakkr.ai/trakkr-research) for further studies.
+
 ## Tools (Commercial)
+
+A selected reference set, not an exhaustive vendor directory. Additional tools need a clear use case or inspectable evidence beyond features already represented here.
 
 - [Trakkr](https://trakkr.ai/) - AI visibility platform; maintains the AI 500 public ranking.
 - [AEO Engine](https://aeoengine.ai/) - Platform for tracking and improving brand visibility across AI answer engines.
@@ -41,7 +80,6 @@ Generative Engine Optimization (GEO), sometimes called Answer Engine Optimizatio
 - [Bluefish AI](https://www.bluefishai.com/) - Platform for measuring brand presence and recommendations in AI-generated answers.
 - [Brandlight](https://www.brandlight.ai/) - AI visibility platform for brand monitoring, competitor comparison, and response analysis.
 - [Evertune](https://www.evertune.ai/) - Platform for AI brand monitoring, prompt analysis, and GEO workflows.
-- [Foglift](https://www.foglift.com/) - AI search visibility platform for monitoring brand mentions and citations.
 - [Gauge](https://www.withgauge.com/) - AI search analytics platform for tracking brand and competitor visibility.
 - [GetMint](https://getmint.ai/) - Platform for monitoring and improving how brands appear in AI search responses.
 - [Goodie](https://higoodie.com/) - AI search visibility platform for answer monitoring and action planning.
@@ -67,15 +105,18 @@ Generative Engine Optimization (GEO), sometimes called Answer Engine Optimizatio
 - [GeoStorm](https://github.com/geostorm-ai/geostorm) - Open-source GEO tracker for running prompts and analyzing AI answer visibility.
 - [OneGlanse](https://github.com/aryamantodkar/oneglanse) - Self-hostable AI visibility tracker for ChatGPT, Gemini, Claude, Perplexity, and Google AI Overview.
 - [OpenCite](https://github.com/smartaces/opencite) - Open-source project for logging and analyzing citations returned by LLMs.
+- [Prerender Buddy MCP](https://github.com/kopachlager/prerenderbuddy-mcp) - Open-source MCP tools for comparing HTTP user-agent responses and inspecting crawler-facing HTML; does not execute JavaScript.
 - [Prompt Clarity](https://github.com/promptclarity/promptclarity) - Open-source tool for tracking brand visibility in LLM responses with user-supplied API keys.
 - [Schema Markup Validator](https://validator.schema.org/) - Free validator for checking schema.org structured data.
 - [TechnicalSEO Robots.txt Tester](https://technicalseo.com/tools/robots-txt/) - Free browser tool for testing robots.txt rules against user agents.
 
 ## Free Checkers
 
+A technical audit, a sampled AI answer, and a visibility score measure different things. Check each tool's method and access requirements before interpreting its result.
+
 - [AEOProof AEO Checker](https://aeoproof.com/tools/ai-search-visibility-checker) - Free scan for AI-search readiness across structure, entities, schema, and trust signals.
-- [AeoScan](https://aeoscan.ai/) - Free checker for testing a domain and keyword across ChatGPT, Claude, Gemini, and Perplexity.
-- [AIclicks GEO Visibility Checker](https://aiclicks.io/tools/free-geo-visibility-checker) - Free GEO audit for checking brand and domain visibility signals.
+- [AIclicks GEO Visibility Checker](https://aiclicks.io/tools/ai-visibility-checker) - Free GEO audit for checking brand and domain visibility signals.
+- [Can AI Bots Read My Site?](https://mydentify.com/tools/ai-crawler-access-checker) - Free crawler-access checker separating search, user retrieval, and training; reports robots rules, directives, and user-agent probes.
 - [Forzeo AI Visibility Checker](https://forzeo.com/tools/ai-visibility-checker) - Free checker for crawler access, structured data, llms.txt, and AI readability.
 - [GrowRanko AI Search Visibility Checker](https://growranko.com/tools/ai-search-visibility) - Free URL checker for AI crawler access, llms.txt, schema, and content structure.
 - [Loamly AI Visibility Checker](https://www.loamly.ai/check) - Free report that checks brand visibility across ChatGPT, Claude, Perplexity, and Gemini.
@@ -84,7 +125,6 @@ Generative Engine Optimization (GEO), sometimes called Answer Engine Optimizatio
 - [SearchScore](https://searchscore.io/) - Free AI search, SEO, and conversion audit for a domain.
 - [Semrush AI Search Visibility Checker](https://www.semrush.com/free-tools/ai-search-visibility-checker/) - Free checker for brand visibility across ChatGPT, Gemini, and Google AI surfaces.
 - [SiteTest AI Visibility Checker](https://sitetest.ai/) - Free page audit for AI citation readiness, structured data, and crawler access.
-- [Visiblo](https://visiblo.io/) - Free AI visibility checker and GEO score tool.
 
 ## Datasets and Benchmarks
 
@@ -106,15 +146,15 @@ Generative Engine Optimization (GEO), sometimes called Answer Engine Optimizatio
 
 ## llms.txt
 
+A proposed format for making selected content available to LLM tools. A valid file does not establish that a search provider uses it or that it changes citations. See [the observational evidence and its limits](https://trakkr.ai/trakkr-research/llmstxt-effect).
+
 - [Answer.AI llms.txt Spec](https://github.com/AnswerDotAI/llms-txt) - Reference proposal for placing curated Markdown guidance for LLMs at `/llms.txt`.
 - [Anthropic llms-full.txt](https://platform.claude.com/llms-full.txt) - Full llms.txt example for Claude platform documentation.
 - [Anthropic llms.txt](https://platform.claude.com/llms.txt) - Short llms.txt example for Claude platform documentation.
-- [BridgeToAgent llms.txt Validator](https://www.bridgetoagent.com/tools/llms-txt-validator) - Free validator with source and npm package links.
 - [Cloudflare Docs llms.txt](https://developers.cloudflare.com/llms.txt) - Example llms.txt file from Cloudflare developer documentation.
 - [Firecrawl Docs llms.txt](https://docs.firecrawl.dev/llms.txt) - Example llms.txt file from Firecrawl developer documentation.
 - [llms.txt Directory](https://llmstxt.org/) - Directory and reference site for websites publishing llms.txt files.
 - [llms.txt Generator and Validator](https://llms-txt.io/) - Web tool for generating and validating llms.txt files.
-- [llms.txt Validator](https://llmsvalidator.com/) - Web validator for checking llms.txt file structure and content.
 - [llmstxtvalidator.dev](https://llmstxtvalidator.dev/) - Free online validator for llms.txt and related AI-readable files.
 - [Mintlify Docs llms.txt](https://www.mintlify.com/docs/llms.txt) - Example llms.txt file from Mintlify documentation.
 - [Next.js Docs llms.txt](https://nextjs.org/docs/llms.txt) - Example llms.txt file from Next.js documentation.
@@ -133,7 +173,7 @@ Generative Engine Optimization (GEO), sometimes called Answer Engine Optimizatio
 - [JSON-LD 1.1](https://www.w3.org/TR/json-ld11/) - W3C recommendation for JSON-LD linked data serialization.
 - [Microsoft Bing Webmaster Guidelines](https://www.bing.com/webmasters/help/webmaster-guidelines-30fba23a) - Microsoft guidelines for Bing search, AI-generated experiences, and webmaster controls.
 - [Open Graph Protocol](https://ogp.me/) - Metadata protocol often used alongside structured data for page summaries.
-- [OpenAI Crawlers and User Agents](https://platform.openai.com/docs/bots) - OpenAI documentation for GPTBot, OAI-SearchBot, ChatGPT-User, and related crawlers.
+- [OpenAI Crawlers and User Agents](https://developers.openai.com/api/docs/bots) - OpenAI documentation for GPTBot, OAI-SearchBot, ChatGPT-User, and related crawlers.
 - [Organization Schema](https://schema.org/Organization) - Schema.org vocabulary for organizations and brands.
 - [Perplexity Crawling and Robots](https://www.perplexity.ai/help-center/en/articles/10354969-how-does-perplexity-follow-robots-txt) - Perplexity help page about robots.txt behavior.
 - [Product Schema](https://schema.org/Product) - Schema.org vocabulary for product pages and offers.
@@ -239,7 +279,7 @@ Generative Engine Optimization (GEO), sometimes called Answer Engine Optimizatio
 
 ## Conferences and Events
 
-- [Ahrefs Evolve](https://ahrefs.com/evolve) - Ahrefs conference for SEO, content, analytics, and search visibility practitioners.
+- [Ahrefs Evolve](https://ahrefsevolve.com/) - Ahrefs conference for SEO, content, analytics, and search visibility practitioners.
 - [brightonSEO](https://brightonseo.com/) - Search marketing conference with sessions on SEO, content, technical search, and AI search.
 - [Chiang Mai SEO Conference](https://chiangmaiseoconference.com/) - SEO conference focused on search strategy, affiliate SEO, and digital growth.
 - [Content Marketing World](https://www.contentmarketingworld.com/) - Content marketing conference covering editorial strategy, distribution, measurement, and AI.
@@ -300,4 +340,4 @@ Generative Engine Optimization (GEO), sometimes called Answer Engine Optimizatio
 
 See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Released under [CC0 1.0 Universal](LICENSE). Maintained by Trakkr. AI 500 context is available at [trakkr.ai/rankings](https://trakkr.ai/rankings).
+Released under [CC0 1.0 Universal](LICENSE). Maintained by Trakkr. AI 500 context is available at [Trakkr rankings](https://trakkr.ai/data/rankings).

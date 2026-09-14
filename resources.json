@@ -10,6 +10,42 @@
   "source": "README.md",
   "sections": [
     {
+      "id": "trakkr-research-and-data",
+      "title": "Trakkr Research and Data",
+      "resources": [
+        {
+          "name": "Citation Source Index",
+          "url": "https://trakkr.ai/trakkr-research/citation-sources",
+          "description": "Public domain explorer with panel, attribution, and classification limits; useful for inspecting cited sources."
+        },
+        {
+          "name": "Do AI Crawlers Prefer Markdown?",
+          "url": "https://trakkr.ai/trakkr-research/markdown-crawler-experiment",
+          "description": "Randomized format experiment measuring crawler coverage, which is a different outcome from citations or sales."
+        },
+        {
+          "name": "How AI Translates Your Questions",
+          "url": "https://trakkr.ai/trakkr-research/query-translation",
+          "description": "Aggregate study of prompt-to-search rewrites; useful for understanding retrieval queries, with individual rows withheld."
+        },
+        {
+          "name": "The Half-Life of AI Citations",
+          "url": "https://trakkr.ai/trakkr-research/citation-decay",
+          "description": "Citation persistence study with observation-window and peak-selection caveats; useful for planning repeated measurement."
+        },
+        {
+          "name": "The llms.txt Effect",
+          "url": "https://trakkr.ai/trakkr-research/llmstxt-effect",
+          "description": "Observational adoption and citation study separating full-sample and subset results; neither establishes a causal effect."
+        },
+        {
+          "name": "Trakkr Data",
+          "url": "https://trakkr.ai/data",
+          "description": "Public AI visibility benchmarks and rankings with links to underlying datasets and methods."
+        }
+      ]
+    },
+    {
       "id": "tools-commercial",
       "title": "Tools (Commercial)",
       "resources": [
@@ -62,11 +98,6 @@
           "name": "Evertune",
           "url": "https://www.evertune.ai/",
           "description": "Platform for AI brand monitoring, prompt analysis, and GEO workflows."
-        },
-        {
-          "name": "Foglift",
-          "url": "https://www.foglift.com/",
-          "description": "AI search visibility platform for monitoring brand mentions and citations."
         },
         {
           "name": "Gauge",
@@ -185,6 +216,11 @@
           "description": "Open-source project for logging and analyzing citations returned by LLMs."
         },
         {
+          "name": "Prerender Buddy MCP",
+          "url": "https://github.com/kopachlager/prerenderbuddy-mcp",
+          "description": "Open-source MCP tools for comparing HTTP user-agent responses and inspecting crawler-facing HTML; does not execute JavaScript."
+        },
+        {
           "name": "Prompt Clarity",
           "url": "https://github.com/promptclarity/promptclarity",
           "description": "Open-source tool for tracking brand visibility in LLM responses with user-supplied API keys."
@@ -211,14 +247,14 @@
           "description": "Free scan for AI-search readiness across structure, entities, schema, and trust signals."
         },
         {
-          "name": "AeoScan",
-          "url": "https://aeoscan.ai/",
-          "description": "Free checker for testing a domain and keyword across ChatGPT, Claude, Gemini, and Perplexity."
+          "name": "AIclicks GEO Visibility Checker",
+          "url": "https://aiclicks.io/tools/ai-visibility-checker",
+          "description": "Free GEO audit for checking brand and domain visibility signals."
         },
         {
-          "name": "AIclicks GEO Visibility Checker",
-          "url": "https://aiclicks.io/tools/free-geo-visibility-checker",
-          "description": "Free GEO audit for checking brand and domain visibility signals."
+          "name": "Can AI Bots Read My Site?",
+          "url": "https://mydentify.com/tools/ai-crawler-access-checker",
+          "description": "Free crawler-access checker separating search, user retrieval, and training; reports robots rules, directives, and user-agent probes."
         },
         {
           "name": "Forzeo AI Visibility Checker",
@@ -259,11 +295,6 @@
           "name": "SiteTest AI Visibility Checker",
           "url": "https://sitetest.ai/",
           "description": "Free page audit for AI citation readiness, structured data, and crawler access."
-        },
-        {
-          "name": "Visiblo",
-          "url": "https://visiblo.io/",
-          "description": "Free AI visibility checker and GEO score tool."
         }
       ]
     },
@@ -368,11 +399,6 @@
           "description": "Short llms.txt example for Claude platform documentation."
         },
         {
-          "name": "BridgeToAgent llms.txt Validator",
-          "url": "https://www.bridgetoagent.com/tools/llms-txt-validator",
-          "description": "Free validator with source and npm package links."
-        },
-        {
           "name": "Cloudflare Docs llms.txt",
           "url": "https://developers.cloudflare.com/llms.txt",
           "description": "Example llms.txt file from Cloudflare developer documentation."
@@ -391,11 +417,6 @@
           "name": "llms.txt Generator and Validator",
           "url": "https://llms-txt.io/",
           "description": "Web tool for generating and validating llms.txt files."
-        },
-        {
-          "name": "llms.txt Validator",
-          "url": "https://llmsvalidator.com/",
-          "description": "Web validator for checking llms.txt file structure and content."
         },
         {
           "name": "llmstxtvalidator.dev",
@@ -480,7 +501,7 @@
         },
         {
           "name": "OpenAI Crawlers and User Agents",
-          "url": "https://platform.openai.com/docs/bots",
+          "url": "https://developers.openai.com/api/docs/bots",
           "description": "OpenAI documentation for GPTBot, OAI-SearchBot, ChatGPT-User, and related crawlers."
         },
         {
@@ -956,7 +977,7 @@
       "resources": [
         {
           "name": "Ahrefs Evolve",
-          "url": "https://ahrefs.com/evolve",
+          "url": "https://ahrefsevolve.com/",
           "description": "Ahrefs conference for SEO, content, analytics, and search visibility practitioners."
         },
         {
